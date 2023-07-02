@@ -10,6 +10,7 @@ public class OdontologoDTO {
     public OdontologoDTO() {
     }
 
+
     public Long getId() {
         return id;
     }
