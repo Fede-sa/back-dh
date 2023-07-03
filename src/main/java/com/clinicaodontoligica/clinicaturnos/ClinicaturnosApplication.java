@@ -9,7 +9,6 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class ClinicaturnosApplication {
 
 
-
 	public static void main(String[] args) {
 
 		PropertyConfigurator.configure("log4j.properties");
