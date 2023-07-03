@@ -8,11 +8,20 @@ import java.util.Date;
 
 public class TurnoDTO {
 
+    private Long id;
     private Odontologo odontologo;
     private Paciente paciente;
     private Date fechaTurno;
 
     public TurnoDTO() {
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
     }
 
     public Odontologo getOdontologo() {

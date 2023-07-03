@@ -3,6 +3,7 @@ package com.clinicaodontoligica.clinicaturnos.entity;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import javax.persistence.*;
 
+import java.sql.Timestamp;
 import java.util.Date;
 import java.util.Set;
 
@@ -16,23 +17,27 @@ public class Paciente {
 
     private String nombre;
     private String apellido;
-    private Date fechaDeIngreso;
+    private String dni;
+
+    @Column(name = "fecha_alta")
+    private Timestamp fechaAlta;
 
     @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "domicilio_id", referencedColumnName = "id")
     private Domicilio domicilio;
 
-    @OneToMany(mappedBy = "paciente")
+    @OneToMany(mappedBy = "paciente", fetch = FetchType.LAZY)
     @JsonIgnore
     private Set<Turno> turnos;
 
     public Paciente() {
     }
 
-    public Paciente(String nombre, String apellido, Date fechaDeIngreso, Domicilio domicilio, Set<Turno> turnos) {
+    public Paciente(String nombre, String apellido, String dni, Timestamp fechaAlta, Domicilio domicilio, Set<Turno> turnos) {
         this.nombre = nombre;
         this.apellido = apellido;
-        this.fechaDeIngreso = fechaDeIngreso;
+        this.dni = dni;
+        this.fechaAlta = fechaAlta;
         this.domicilio = domicilio;
         this.turnos = turnos;
     }
@@ -61,12 +66,20 @@ public class Paciente {
         this.apellido = apellido;
     }
 
-    public Date getFechaDeIngreso() {
-        return fechaDeIngreso;
+    public String getDni() {
+        return dni;
     }
 
-    public void setFechaDeIngreso(Date fechaDeIngreso) {
-        this.fechaDeIngreso = fechaDeIngreso;
+    public void setDni(String dni) {
+        this.dni = dni;
+    }
+
+    public Timestamp getFechaAlta() {
+        return fechaAlta;
+    }
+
+    public void setFechaAlta(Timestamp fechaAlta) {
+        this.fechaAlta = fechaAlta;
     }
 
     public Domicilio getDomicilio() {

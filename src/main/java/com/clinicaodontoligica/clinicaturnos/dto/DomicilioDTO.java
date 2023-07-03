@@ -4,37 +4,32 @@ public class DomicilioDTO {
 
     private Long id;
     private String calle;
-    private String numeracion;
+    private String numero;
     private String provincia;
     private String localidad;
 
     public DomicilioDTO() {
     }
 
+
     public Long getId() {
         return id;
     }
-
     public void setId(Long id) {
         this.id = id;
     }
-
     public String getCalle() {
         return calle;
     }
-
     public void setCalle(String calle) {
         this.calle = calle;
     }
-
-    public String getNumeracion() {
-        return numeracion;
+    public String getNumero() {
+        return numero;
     }
-
-    public void setNumeracion(String numeracion) {
-        this.numeracion = numeracion;
+    public void setNumero(String numero) {
+        this.numero = numero;
     }
-
     public String getProvincia() {
         return provincia;
     }

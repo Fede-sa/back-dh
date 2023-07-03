@@ -3,6 +3,7 @@ package com.clinicaodontoligica.clinicaturnos.dto;
 import com.clinicaodontoligica.clinicaturnos.entity.Domicilio;
 
 
+import java.sql.Timestamp;
 import java.util.Date;
 
 public class PacienteDTO {
@@ -10,8 +11,9 @@ public class PacienteDTO {
     private Long id;
     private String nombre;
     private String apellido;
+    private String dni;
     private Domicilio domicilio;
-    private Date fechaDeIngreso;
+    private Timestamp fechaAlta;
 
     public PacienteDTO() {
     }
@@ -40,6 +42,14 @@ public class PacienteDTO {
         this.apellido = apellido;
     }
 
+    public String getDni() {
+        return dni;
+    }
+
+    public void setDni(String dni) {
+        this.dni = dni;
+    }
+
     public Domicilio getDomicilio() {
         return domicilio;
     }
@@ -48,11 +58,11 @@ public class PacienteDTO {
         this.domicilio = domicilio;
     }
 
-    public Date getFechaDeIngreso() {
-        return fechaDeIngreso;
+    public Timestamp getFechaAlta() {
+        return fechaAlta;
     }
 
-    public void setFechaDeIngreso(Date fechaDeIngreso) {
-        this.fechaDeIngreso = fechaDeIngreso;
+    public void setFechaAlta(Timestamp fechaAlta) {
+        this.fechaAlta = fechaAlta;
     }
 }

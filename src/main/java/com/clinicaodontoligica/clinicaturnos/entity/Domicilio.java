@@ -13,7 +13,7 @@ public class Domicilio {
     private Long id;
 
     private String calle;
-    private String numeracion;
+    private String numero;
     private String provincia;
     private String localidad;
 
@@ -24,12 +24,11 @@ public class Domicilio {
     public Domicilio() {
     }
 
-    public Domicilio(String calle, String numeracion, String provincia, String localidad, Paciente paciente) {
+    public Domicilio(String calle, String numero, String provincia, String localidad) {
         this.calle = calle;
-        this.numeracion = numeracion;
+        this.numero = numero;
         this.provincia = provincia;
         this.localidad = localidad;
-        this.paciente = paciente;
     }
 
     public Long getId() {
@@ -48,12 +47,12 @@ public class Domicilio {
         this.calle = calle;
     }
 
-    public String getNumeracion() {
-        return numeracion;
+    public String getNumero() {
+        return numero;
     }
 
-    public void setNumeracion(String numeracion) {
-        this.numeracion = numeracion;
+    public void setNumero(String numero) {
+        this.numero = numero;
     }
 
     public String getProvincia() {

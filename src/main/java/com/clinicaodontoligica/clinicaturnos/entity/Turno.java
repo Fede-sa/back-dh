@@ -4,6 +4,7 @@ import javax.persistence.*;
 
 import java.util.Date;
 
+
 @Entity
 @Table(name = "Turnos")
 public class Turno {
@@ -12,12 +13,12 @@ public class Turno {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
-    @JoinColumn(name = "odontologo_id")
+    @ManyToOne
+    @JoinColumn(name = "odontologo_id", nullable = false)
     private Odontologo odontologo;
 
-    @ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
-    @JoinColumn(name = "paciente_id")
+    @ManyToOne
+    @JoinColumn(name = "paciente_id", nullable = false)
     private Paciente paciente;
 
     private Date fechaTurno;
@@ -25,7 +26,8 @@ public class Turno {
     public Turno() {
     }
 
-    public Turno(Odontologo odontologo, Paciente paciente, Date fechaTurno) {
+    public Turno(Long id, Odontologo odontologo, Paciente paciente, Date fechaTurno) {
+        this.id = id;
         this.odontologo = odontologo;
         this.paciente = paciente;
         this.fechaTurno = fechaTurno;
